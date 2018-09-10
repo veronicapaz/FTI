@@ -1,17 +1,26 @@
 import re 
+import sys
 
-valor1 = re.compile(r'(/^(foo){1}$/)')
-valor2 = re.compile(r'(/^(bar){1}$/)')
+#se ejecuta python tp1.py
+
+cadena = raw_input('Introduce una cadena de texto: ')
+print 'La cadena que ingreso es:\n',cadena
+foo = re.compile(r'\b(F|f)oo\b')  # busca la palabra foo
+bar = foo.sub("bar",cadena)
+print 'La cadena resultante:\n',bar
+
+#valor1 = re.compile(r'(/^(foo){1}$/)')
+#valor2 = re.compile(r'(/^(bar){1}$/)')
 #crea una expresion regular
 
-try:
-		archivo = open('/home/veronica/Documentos/FTI 2018/TP1/archivo.txt','r') 
-except IOError:		
-		print("Error -> No se puede abrir el archivo")
-else:
-		texto = archivo.read()
-		texto_reemplazado = re.sub(valor1,valor2,texto)
-		archivo.close
+#try:
+#		archivo = open('/home/veronica/Documentos/FTI 2018/TP1/archivo.txt','r') 
+#except IOError:		
+#		print("Error -> No se puede abrir el archivo")
+#else:
+#		texto = archivo.read()
+#		texto_reemplazado = re.sub(valor1,valor2,texto)
+#		archivo.close
 
 #texto_reemplazado = re.sub(pattern=(r'(/^(foo){1}$/)'),(r'(/^(bar){1}$/)'))
 #el de abajo es un ejemplo que probe y que anda, cambia lo que esta escrito 
