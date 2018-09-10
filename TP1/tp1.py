@@ -5,9 +5,13 @@ import sys
 
 cadena = raw_input('Introduce una cadena de texto: ')
 print 'La cadena que ingreso es:\n',cadena
-foo = re.compile(r'\b(F|f)oo\b')  # busca la palabra foo
-bar = foo.sub("bar",cadena)
-print 'La cadena resultante:\n',bar
+valor1 = re.compile(r'foo')
+#valor1 = re.compile(r'\b(F|f)oo\b')
+cadena2 = valor1.sub("bar",cadena)
+print 'La cadena resultante:\n',cadena2
+
+#resultado = re.search(r'\b(F|f)oo\b', cadena)
+#print 'La cadena buscada es:\n',resultado
 
 #valor1 = re.compile(r'(/^(foo){1}$/)')
 #valor2 = re.compile(r'(/^(bar){1}$/)')
