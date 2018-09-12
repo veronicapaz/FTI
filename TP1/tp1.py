@@ -3,6 +3,37 @@ import sys
 
 #se ejecuta python tp1.py
 
+print "Lista de argumentos: ", sys.argv
+
+#VER DE INGRESAR OTRO PARAMETRO PARA LA LINEA ACTUAL O TODAS LAS LINEAS
+
+
+val = re.compile(r':(% | \d+,\d+)?s/[a-z]*/[a-z]*/g')
+
+#val = re.compile(r':(\d+)?,?[1-9]?[1-9]?%?s/[a-z]*/[a-z]*/g')
+print(sys.argv[1])
+
+if val.search(sys.argv[1]) != None:
+    print ("Expresionn re contra valida")
+else:
+    print ("Expresion invalida")
+
+
+palabras = re.split('/', sys.argv[1])
+p1 = palabras[1]
+p2 = palabras[2]
+
+print ('voy a cambiar ' + p1 + 'por ' + p2)
+
+archivo = open('/home/ub18/Documentos/2018/FTI/FTI/TP1/archivo.txt','r')
+print (archivo.read()) 
+
+
+
+##VALIDAR LA EXPRESION
+
+
+"""
 cadena = raw_input('Introduce una cadena de texto: ')
 print 'La cadena que ingreso es:\n',cadena
 valor1 = re.compile(r'foo')
@@ -18,7 +49,8 @@ print 'La cadena resultante:\n',cadena2
 #crea una expresion regular
 
 #try:
-#		archivo = open('/home/veronica/Documentos/FTI 2018/TP1/archivo.txt','r') 
+archivo = open('/home/ub18/Documentos/2018/FTI/FTI/TP1/archivo.txt','r')
+print (archivo.read()) 
 #except IOError:		
 #		print("Error -> No se puede abrir el archivo")
 #else:
@@ -44,3 +76,4 @@ print 'La cadena resultante:\n',cadena2
 #sub_cadena = re.search(r"h", "hola mundo")
 #print(sub_cadena.group())
 #para utilizar las expresiones regulares
+"""
