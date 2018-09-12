@@ -23,9 +23,6 @@ else:
 
 archivo = open('/home/ub18/Documentos/2018/FTI/FTI/TP1/archivo.txt','r')
 
-#lineas = archivo.readlines()[2]
-#print(lineas)
-#texto = archivo.read()
 
 str_patron1 = re.split('/', patron_init)[1]
 str_patron2 = re.split('/', patron_init)[2]
@@ -53,11 +50,20 @@ elif b.match(patron_init):
     print(texto)
 else:
     print('patron ingresado C')
-
-#print(patron_init)
-#print(re.split(r'(:|s)',patron_init)[2])
-
-#print( re.split('s', sys.argv[1]))
+    print(re.split(r'(:|\,|s)',patron_init))
+    lin_ini = int(re.split(r'(:|\,|s)',patron_init)[2])
+    lin_fin = int(re.split(r'(:|\,|s)',patron_init)[4])
+    if lin_ini > lin_fin:
+        print('Rango de lineas incorrectos')
+        sys.exit()
+    try:
+        lineas = archivo.readlines()
+        for i in range(lin_ini, lin_fin+1):
+            lineas[i] = patron1.sub(str_patron2,lineas[i])
+    except IndexError:
+        print('linea inexistente')
+    output = open("output.txt","w")
+    output.writelines(lineas)
 
 
 """
