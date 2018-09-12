@@ -10,25 +10,38 @@ print "Lista de argumentos: ", sys.argv
 
 val = re.compile(r':(\d+|%|\d+\,\d+)s/[a-z]*/[a-z]*/g')
 
-#val = re.compile(r':(\d+)?,?[1-9]?[1-9]?%?s/[a-z]*/[a-z]*/g')
-print(sys.argv[1])
+#print(sys.argv[1])
 
 if val.search(sys.argv[1]) != None:
-    print ("Expresionn re contra valida")
+    print ("Expresion regular VALIDA")
 else:
-    print ("Expresion invalida")
-
+    print ("Expresion INVALIDA")
+    sys.exit()
 
 palabras = re.split('/', sys.argv[1])
 p1 = palabras[1]
 p2 = palabras[2]
 
-print ('voy a cambiar ' + p1 + 'por ' + p2)
+print ('voy a cambiar "' + p1 + '" por "' + p2 +'"')
 
 archivo = open('/home/ub18/Documentos/2018/FTI/FTI/TP1/archivo.txt','r')
-print (archivo.read()) 
+#print (archivo.read()) 
+texto = archivo.read()
 
+val = re.compile(p1)
+texto = val.sub(p2,texto)
 
+print(texto)
+
+"""
+archivo = open('/home/ub18/Documentos/2018/FTI/FTI/TP1/archivo.txt','r')
+linea = archivo.readlines()
+try:
+    print (linea[9])
+except IndexError:
+    print('linea inexistente')
+
+"""
 
 ##VALIDAR LA EXPRESION
 
