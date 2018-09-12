@@ -8,7 +8,7 @@ print "Lista de argumentos: ", sys.argv
 #VER DE INGRESAR OTRO PARAMETRO PARA LA LINEA ACTUAL O TODAS LAS LINEAS
 
 
-val = re.compile(r':(% | \d+,\d+)?s/[a-z]*/[a-z]*/g')
+val = re.compile(r':(\d+|%|\d+\,\d+)s/[a-z]*/[a-z]*/g')
 
 #val = re.compile(r':(\d+)?,?[1-9]?[1-9]?%?s/[a-z]*/[a-z]*/g')
 print(sys.argv[1])
